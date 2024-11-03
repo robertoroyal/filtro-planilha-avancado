@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Leitor de Planilha Avançado</title>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="styles.css">  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>  
+</head>  
+<body>  
+    <div class="container mt-5">  
+        <h1 class="text-center">Leitor de Planilha Avançado</h1>  
+        <div id="countContainer" class="info text-center">Total de resultados encontrados: 0</div>  
+        <input type="file" id="fileInput" accept=".csv, .txt, .xlsx, .xls" class="form-control mt-3" />  
+        <button onclick="lerPlanilha()" class="btn btn-primary mt-2">Ler Planilha</button>  
+
+        <select id="themeSelector" onchange="changeTheme()" class="form-control mt-3">  
+            <option value="light">Claro</option>  
+            <option value="dark">Escuro</option>  
+        </select>  
+        <div class="filter-container mt-3">  
+            <label for="filterInput">Filtrar valores: </label>  
+            <input type="text" id="filterInput" oninput="filtrarTabela()" placeholder="Digite um valor..." class="form-control" />  
+            <div id="history" class="mt-2"></div>  
+        </div>  
+
+        <div id="resultado" class="mt-4"></div>  
+    </div>  
+    <script src="script.js"></script>  
+</body>  
+</html>
